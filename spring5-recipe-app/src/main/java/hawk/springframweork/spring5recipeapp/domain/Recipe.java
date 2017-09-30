@@ -51,7 +51,7 @@ public class Recipe {
 	@Enumerated(value=EnumType.STRING)
 	private Difficulty difficulty;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL, mappedBy="recipe")
 	private Notes notes;
 	
 	@ManyToMany
@@ -60,6 +60,12 @@ public class Recipe {
 		inverseJoinColumns= @JoinColumn(name="category_id"))
 	private Set<Category> categories = new HashSet<>();
 
+	
+    public Recipe addIngredient(Ingredient ingredient){
+        ingredient.setRecipe(this);
+        this.ingredients.add(ingredient);
+        return this;
+    }
 	
 	public Long getId() {
 		return id;
@@ -138,6 +144,7 @@ public class Recipe {
 	}
 
 	public void setNotes(Notes notes) {
+		notes.setRecipe(this);  // bidirectional
 		this.notes = notes;
 	}
 
