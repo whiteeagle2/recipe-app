@@ -26,5 +26,4 @@ public class NotesCommandToNotes implements Converter<NotesCommand, Notes> {
 		
 		return notes;
 	}
-
 }

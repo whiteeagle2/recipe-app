@@ -25,6 +25,4 @@ public class UnitOfMeasureToUnitOfMeasureCommand implements Converter<UnitOfMeas
 		
 		return uom;
 	}
-	
-	
 }

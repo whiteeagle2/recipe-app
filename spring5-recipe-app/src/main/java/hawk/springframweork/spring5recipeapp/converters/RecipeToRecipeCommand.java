@@ -52,10 +52,6 @@ public class RecipeToRecipeCommand implements Converter<Recipe, RecipeCommand> {
 			source.getIngredients()
 			.forEach(ingredient -> recipe.getIngredients().add(ingredientConverter.convert(ingredient)));
 		}
-		
-		
 		return recipe;
-		
 	}
-
 }

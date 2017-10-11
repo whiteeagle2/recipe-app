@@ -15,7 +15,6 @@ import lombok.EqualsAndHashCode;
  * No CascadeType - we don't want to delete etc Recipe deleting Notes
  */
 
-
 @Data
 @EqualsAndHashCode(exclude = {"recipe"})
 @Entity
@@ -23,10 +22,8 @@ public class Notes {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	
 	@OneToOne(mappedBy="notes")
 	private Recipe recipe;
 	@Lob
 	private String recipeNotes;
-	
 }

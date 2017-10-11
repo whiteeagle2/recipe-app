@@ -13,7 +13,6 @@ import javax.persistence.OneToOne;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-
 /*
  * 
  * We specify Recipe he (Ingredient) belongs to
