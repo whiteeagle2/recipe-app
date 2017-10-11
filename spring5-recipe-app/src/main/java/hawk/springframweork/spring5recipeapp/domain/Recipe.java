@@ -71,7 +71,9 @@ public class Recipe {
     }
 	
 	public void setNotes(Notes notes) {
+		if (notes != null) {
 		notes.setRecipe(this);  // bidirectional
 		this.notes = notes;
+		}
 	}
 }
