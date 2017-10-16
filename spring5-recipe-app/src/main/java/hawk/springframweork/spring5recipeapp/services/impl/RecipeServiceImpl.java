@@ -12,6 +12,7 @@ import hawk.springframweork.spring5recipeapp.commands.RecipeCommand;
 import hawk.springframweork.spring5recipeapp.converters.RecipeCommandToRecipe;
 import hawk.springframweork.spring5recipeapp.converters.RecipeToRecipeCommand;
 import hawk.springframweork.spring5recipeapp.domain.Recipe;
+import hawk.springframweork.spring5recipeapp.exceptions.NotFoundException;
 import hawk.springframweork.spring5recipeapp.repositories.RecipeRepository;
 import hawk.springframweork.spring5recipeapp.services.RecipeService;
 import lombok.extern.slf4j.Slf4j;
@@ -45,7 +46,7 @@ public class RecipeServiceImpl implements RecipeService {
 		Optional<Recipe> recipeOptional = recipeRepository.findById(l);
 		
 		if(!recipeOptional.isPresent()) {
-			throw new RuntimeException("Recipe not found");
+			throw new NotFoundException("Recipe Not Found. For ID value : " + l);
 		}
 		
 		return recipeOptional.get();
