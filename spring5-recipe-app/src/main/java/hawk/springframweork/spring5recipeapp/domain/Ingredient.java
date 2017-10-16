@@ -10,8 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 /*
  * 
@@ -19,7 +20,8 @@ import lombok.EqualsAndHashCode;
  * 
  * @ManyToOne recipe - This ingredient belongs to only one Recipe
  */
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Ingredient {
